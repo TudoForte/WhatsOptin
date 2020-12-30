@@ -14,13 +14,12 @@
       .form-style-6 {
         font: 95% Arial, Helvetica, sans-serif;
         max-width: 400px;
-        margin: 10px auto;
+        margin: 50px auto;
         padding: 16px;
         background: #F7F7F7;
       }
 
       .form-style-6 h1 {
-        background: #43D1AF;
         padding: 20px 0;
         font-size: 140%;
         font-weight: 300;
@@ -32,6 +31,14 @@
         align-items: center;
       }
 
+      .color-whats{
+        background: #43D1AF;
+      }
+
+      .color-find{
+        background: #007aff;
+      }
+
       .form-style-6 input[type="text"],
       .form-style-6 input[type="date"],
       .form-style-6 input[type="datetime"],
@@ -39,6 +46,7 @@
       .form-style-6 input[type="number"],
       .form-style-6 input[type="search"],
       .form-style-6 input[type="time"],
+      .form-style-6 input[type="tel"],
       .form-style-6 input[type="url"],
       .form-style-6 textarea,
       .form-style-6 select {
@@ -74,8 +82,7 @@
         border: 1px solid #43D1AF;
       }
 
-      .form-style-6 input[type="submit"],
-      .form-style-6 input[type="button"] {
+      .button-whats {
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -89,14 +96,37 @@
         color: #fff;
       }
 
-      .form-style-6 input[type="submit"]:hover,
-      .form-style-6 input[type="button"]:hover {
+      .button-whats:hover {
         background: #2EBC99;
       }
+
+      .button-find {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 100%;
+        padding: 3%;
+        background: #007aff;
+        border-bottom: 2px solid  #007aff;
+        border-top-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: #fff;
+      }
+
+      .button-find:hover {
+        background:  #0357b0;
+      }
+
+      .image-search{
+        margin-left: 30px;
+        display: none;
+      }
+
     </style>
 
     <div class="form-style-6">
-      <h1>
+      <h1 class="color-whats">Cadastrar Número
         <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
           <path fill="#00E676"
             d="M10.7 32.8l.6.3c2.5 1.5 5.3 2.2 8.1 2.2 8.8 0 16-7.2 16-16 0-4.2-1.7-8.3-4.7-11.3s-7-4.7-11.3-4.7c-8.8 0-16 7.2-15.9 16.1 0 3 .9 5.9 2.4 8.4l.4.6-1.6 5.9 6-1.5z">
@@ -106,8 +136,15 @@
           </path>
         </svg>
       </h1>
-      <input id="input" type="text" placeholder="Digite o Contato Ex: 17992242020" />
-      <input onclick="getValue()" type="submit">
+      <input id="input" type="tel" placeholder="Digite o Contato Ex: 17992242020" />
+      <button onclick="sendPhone()" class="button-whats">Registrar</button>
+    </div>
+
+
+    <div class="form-style-6">
+      <h1 class="color-find">Consultar Número Cadastrado <img id="image-search" class="image-search" width="50px" src="img/search.gif" /></h1>
+      <input id="phone" type="tel" placeholder="Digite o Contato Ex: 17992242020" />
+      <button onclick="getPhone()" class="button-find">Buscar</button>
     </div>
 
     <script src='js/index.js'></script>
